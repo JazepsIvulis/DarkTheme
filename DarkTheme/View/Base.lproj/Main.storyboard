@@ -17,15 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WS-FS-iMZ">
-                                <rect key="frame" x="88.5" y="266.5" width="143.5" height="35"/>
+                                <rect key="frame" x="70" y="266.5" width="180" height="35"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Lef-Vj-VVj"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="yus-fK-KaV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="yus-fK-KaV"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Dark Theme On"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Switch Button">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="darkThemeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9z8-oU-WVL"/>
                                 </connections>
