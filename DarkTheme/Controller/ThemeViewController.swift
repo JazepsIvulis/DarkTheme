@@ -34,24 +34,21 @@ class ThemeViewController: UIViewController {
         turnDarkThemeOn(isDarkThemeOn: darkThemeIsOn)
     }
     
+    @IBAction func plusButtonTapped(_ sender: Any) {
+        basicAlert(title: "Add New?", message: "Do you want to add new...?")
+    }
+    
+    @IBAction func infoButtonTapped(_ sender: Any) {
+        basicActionAlert(title: "Action Sheet is On!", message: "All good here")
+    }
+    
     func turnDarkThemeOn(isDarkThemeOn: Bool) {
-        if darkThemeIsOn {
-            darkThemeButton.setTitle(ButtonText.on.rawValue, for: .normal)
-            darkThemeButton.setTitleColor(UIColor.black, for: .normal)
-            
-            navigationItem.title = NavBarText.off.rawValue
-            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-            view.backgroundColor = UIColor.white
-            darkThemeIsOn = false
-        } else {
-            darkThemeButton.setTitle(ButtonText.off.rawValue, for: .normal)
-            darkThemeButton.setTitleColor(UIColor.white, for: .normal)
-            
-            navigationItem.title = NavBarText.on.rawValue
-            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            view.backgroundColor = UIColor.black
-            darkThemeIsOn = true
-        }
+        darkThemeButton.setTitle(isDarkThemeOn ? ButtonText.on.rawValue : ButtonText.off.rawValue, for: .normal)
+        darkThemeButton.setTitleColor(isDarkThemeOn ? .black : .white, for: .normal)
+        
+        navigationItem.title = isDarkThemeOn ? NavBarText.off.rawValue : NavBarText.on.rawValue
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: isDarkThemeOn ? UIColor.black : UIColor.white]
+        view.backgroundColor = isDarkThemeOn ? .white : .black
+        darkThemeIsOn.toggle()
     }
 }
-
